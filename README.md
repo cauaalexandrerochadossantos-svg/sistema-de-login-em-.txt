@@ -1,4 +1,13 @@
   # sistema de login de usuario
 
-- ultilizamos o oop para criarmos heranças como cliente, saldo, e conta 
-encapsulamento para sub-class como saldo da conta,
+-   # sistema de login de usuario
+
+- sistema de login ultilizando python para cadastro de alunos armazenado em arquivo.txt
+
+- uso das bibliotecas nativas em python getpass hashlib
+
+- uso de tartamento de erros "try"
+
+- uso da funcao with 
+
+- menu interativo para o terminal
