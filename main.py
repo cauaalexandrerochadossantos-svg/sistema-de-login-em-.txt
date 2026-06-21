@@ -1,9 +1,11 @@
 import hashlib
 import getpass
+import os
+#faz com que o python aponte para a pasta do exato da nossa IDE garantindo que leia a nossa pasta .txt
+DIRETORIO_ATUAL = os.path.dirname(os.path.abspath(__file__))
+ARQUIVO_USUARIOS = os.path.join(DIRETORIO_ATUAL, 'usuarios.txt')
 
-ARQUIVO_USUARIOS = 'usuarios.txt'
-
-
+#visual do painel do terminal
 def menu():
     print('\n' + '-' * 30)
     print('SISTEMA DE ACESSO')
@@ -30,7 +32,7 @@ def cadastrar():
             for linha in arquivo:
                 partes = linha.strip().split(':')
                 if len(partes) == 2:
-                    usuario_arquivo, _ = partes
+                    usuario_arquivo = partes
 
                     if usuario == usuario_arquivo:
                         print('Usuario já existe.')
@@ -38,13 +40,13 @@ def cadastrar():
 
     except FileNotFoundError:
         pass
-
+#anexar novos usuarios
     with open(ARQUIVO_USUARIOS, 'a') as arquivo:
         arquivo.write(f'{usuario}:{senha_hash}\n')
 
     print('Usuario cadastrado com sucesso!')
 
-
+#cria os novos usuarios
 def login():
     usuario = input('Digite o nome do usuario: ').strip()
     senha = getpass.getpass('Digite a senha: ').strip()
@@ -78,7 +80,7 @@ def login():
     else:
         print('Usuario ou senha incorretos.')
 
-
+#painel no terminal
 def iniciar():
     while True:
         opcao = menu()
