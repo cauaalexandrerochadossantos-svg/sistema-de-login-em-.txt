@@ -1,0 +1,20 @@
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambiente virtual
+venv/
+env/
+.venv/
+
+# Configurações do VS Code
+.vscode/
+
+# Arquivos de sistema Windows
+Thumbs.db
+Desktop.ini
+
+# Arquivos de sistema macOS
+.DS_Store
